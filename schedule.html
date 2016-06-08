@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flight Schedule</title>
+  
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://rawgit.com/wenzhixin/bootstrap-table/master/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css">
+    <link rel="stylesheet" href="theme.default.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+    <script src="https://rawgit.com/wenzhixin/bootstrap-table/master/dist/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="grid-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <!--<link rel="stylesheet" href="grid.css">-->
+        <link rel="stylesheet" href="main.css">
+    <!--<![endif]-->
+</head>
+
+<body>
+    <!--
+    Your HTML goes here. Visit purecss.io/layouts/ for some sample HTML code.
+    -->
+    <div class="pure-g">
+        
+        <div class="box">
+            <div class="pure-u-1 pure-u-sm-6-24 price"> 
+             
+                <!-- <label for="amount">Price:</label> -->
+                <input id="amount" />      
+           
+                <div id="slider-range"></div>
+            </div>                    
+
+            <div class="pure-menu pure-menu-horizontal pure-u-1 pure-u-sm-6-24 duration">
+                <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover pure-u-1">
+                    <a href="#" class="pure-menu-link ">Duration</a>
+                        <ul id="Link" class="pure-menu-children" >
+                            <li class="pure-menu-item" id="1"><a href="#" class="pure-menu-link">Less than 2 hours</a></li>
+                            <li class="pure-menu-item" id="2"><a href="#" class="pure-menu-link">2 to 3 hours</a></li>
+                            <li class="pure-menu-item" id="3"><a href="#" class="pure-menu-link">More than 3 hours</a></li>
+                        </ul>
+                </li>
+            </div>
+
+            <div class="pure-u-1 pure-u-sm-6-24 airline">
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control"  placeholder="Airline" id="searchTerm" onkeyup="doSearch()">
+                    <span class="input-group-addon">
+                        <button type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>  
+                    </span>
+                </div>
+            </div> 
+        </div>   
+        
+
+        <div class="pure-u-1 pure-u-md-1" id="lf">
+            <table class="table" id="tf">
+                <thead>
+                    <tr id="thead">
+                        <th class="fr">From</th>
+                        <th class="to">To</th>
+                        <th>Departure<i class="glyphicon glyphicon-sort"></i></th>
+                        <th>Arrival <i class="glyphicon glyphicon-sort"></i></th>
+                        <th>Duration <i class="glyphicon glyphicon-sort"></i></th>
+                        <th>Airline <i class="glyphicon glyphicon-sort"></i></th>
+                        <th>Seats <i class="glyphicon glyphicon-sort"></i></th>
+                        <th>Price <i class="glyphicon glyphicon-sort"></i></th>
+                    </tr>
+                    <tbody id="list">
+                    </tbody>
+                </thead>
+            </table>
+        </div>
+        
+    </div>
+    <script src="flightdata.js"></script>
+</body>
+</html>
